@@ -1,0 +1,9 @@
+一:iOS开发中关于没有数据时不显示tableView的分割线
+//可以直接添加如下代码即可
+self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+二.UITableView分割线顶格显示.
+//设置分割线顶格  
+func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {  
+    cell.separatorInset = UIEdgeInsetsZero  
+    cell.layoutMargins = UIEdgeInsetsZero  
+}  
