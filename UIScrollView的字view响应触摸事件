@@ -1,0 +1,32 @@
+[转载]IOS_让UIScrollView的子view响应触摸事件 (2012-10-26 16:27:18)转载▼
+标签： 转载	
+原文地址：IOS_让UIScrollView的子view响应触摸事件作者：青鳥Ayukyo
+有时候在UIScrollView中有某些子视图需要响应一些触摸事件，比如拖动、画板等
+但是默认情况下，触摸事件会被UIScrollView捕获
+实际上解决的方法很多，这里我先列出一种（自认为最简单的）：
+先设置UIScrollView的属性：
+scrollView.canCancelContentTouches = YES; 
+scrollView.delaysContentTouches = NO;
+对于要响应事件的子view，继承之，重写之：
+#pragma mark - 
+#pragma mark 触摸事件 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { 
+//在这里设置scrollView的属性 
+//globalScrollView.scrollEnabled = NO;
+ } 
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event { 
+//处理啥啥
+ } 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event { 
+//在这里设置scrollView的属性 
+//globalScrollView.scrollEnabled = YES; 
+}
+至此，我们已经搞定之 – -
+更有定制性的用法：
+我们甚至可以这么干：
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+ If(xxxxx) { 
+globalScrollView.scrollEnabled = YES; 
+}
+ }
+在touchesMoved里面做一些判定后再决定是否禁止uiscrollView滚动。
