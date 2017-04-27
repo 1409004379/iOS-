@@ -1,0 +1,6 @@
+    NSString * update = [NSString stringWithFormat:@"update FlightGoods set actualNum = '%@', loseNum = '%@',remarks = '%@' where goodsCode = '%@'",flightGoods.actualNum,flightGoods.loseNum,flightGoods.remarks,flightGoods.goodsCode];
+    
+   注意: 
+   1.sql语句需要更新的值要用单引号引起来,但是前面的 key 和 表的名字 不能括起来,如果括起来了,返回的BOOL值也会显示是成功,但是数据库的值没有更新.
+   2.查询需要根据主键进行,比如是ID ,根据ID 找到这条数据,然后去更新里面的字段.
+    
