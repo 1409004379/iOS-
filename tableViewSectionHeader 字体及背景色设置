@@ -1,0 +1,56 @@
+                               tableViewSectionHeader 字体及背景色设置
+
+//区头的字体颜色设置
+
+-(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+
+{
+
+UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+
+header.textLabel.textColor = [UIColor redColor];
+
+header.contentView.backgroundColor = [UIColor yellowColor];
+
+}
+
+
+
+//右侧索引的设置
+
+#pragma mark = 索引的设置
+
+//索引标题
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{    
+
+    return self.indexArr[section];
+
+}
+
+//系统的右侧索引数组
+
+- (NSArray*)sectionIndexTitlesForTableView:(UITableView *)tableView
+
+{
+
+return self.indexArr;
+
+}
+
+//索引列点击事件
+
+-(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+
+{
+
+[self.view endEditing:YES];
+
+NSString *string = self.indexArr[index];
+
+[self showCenterIndexShowView:string];
+
+return index;
+
+}
+
