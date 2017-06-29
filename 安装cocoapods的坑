@@ -1,0 +1,16 @@
+安装cocoapods时遇到一个坑,---------It seems your ruby installation is missing psych (for YAML output).
+在stackoverflow上找到了一个方法:
+https://stackoverflow.com/questions/15738883/please-install-libyaml-and-reinstall-your-ruby
+=========================================
+First remove any previous docs of yaml by
+
+cd .rvm/src
+sudo rm -rf yaml*
+Then you can do rest of the install by -
+
+rvm pkg install libyaml
+
+P.S You will need to reinstall ruby after this.
+===============================================
+然后再按照下面的教程安装:
+安装cocoapods的教程 http://www.jianshu.com/p/b64b4fd08d3c
