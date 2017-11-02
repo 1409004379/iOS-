@@ -43,3 +43,7 @@ http://www.itstrike.cn/Question/172f23eb-78bd-4057-885d-099f691e355d.html
 
 12.tableView 里 textView 插入图片，高度随内容自动增，解决textView 键盘遮挡，最后对图片 文字进行截取保存。地图自定义大头针，地图选点（防微信位置分享选择地图界面）
 https://github.com/GaoYingQiu/NoteTextView
+
+
+13.多语言的设置的参考.包含多种语言设置.
+https://github.com/IOSYUNYUN/YL_IOS_Internationalization
